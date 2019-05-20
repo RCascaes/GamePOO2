@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="guiJFX.MatchControlador">
+   <children>
+      <ToolBar prefHeight="35.0" prefWidth="600.0">
+         <items>
+            <Button disable="true" mnemonicParsing="false" onAction="#actionSave" text="Save" />
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#actionQuit" prefHeight="21.0" prefWidth="43.0" text="Quit" />
+         </items>
+      </ToolBar>
+      <Label fx:id="lblPlayer" alignment="CENTER" contentDisplay="CENTER" layoutX="-2.0" layoutY="53.0" onDragDetected="#initialize" prefHeight="35.0" prefWidth="600.0" text="Player" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblTerritorio" layoutX="14.0" layoutY="101.0" onDragDetected="#initialize" text="Territories: " />
+      <Label fx:id="lblQtdTerritorio" layoutX="74.0" layoutY="101.0" onDragDetected="#initialize" prefHeight="17.0" prefWidth="43.0">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnEndTurn" layoutX="441.0" layoutY="97.0" mnemonicParsing="false" onAction="#actionEndTurn" text="end turn" />
+      <Button fx:id="btnSurrender" layoutX="520.0" layoutY="97.0" mnemonicParsing="false" onAction="#actionSurrender" text="surrender" />
+      <GridPane fx:id="grdMapa" alignment="BOTTOM_CENTER" gridLinesVisible="true" layoutX="13.0" layoutY="142.0" prefHeight="344.0" prefWidth="574.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Button fx:id="cmp00" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp01" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.columnIndex="1">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp02" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.columnIndex="2">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp03" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.columnIndex="3">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp04" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.columnIndex="4">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp05" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.columnIndex="5">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp06" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.columnIndex="6">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp07" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.columnIndex="7">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp08" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.columnIndex="8">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp09" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.columnIndex="9">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp10" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp11" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp12" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp13" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp14" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.columnIndex="4" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp15" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.columnIndex="5" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp16" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.columnIndex="6" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp17" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.columnIndex="7" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp18" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.columnIndex="8" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp19" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.columnIndex="9" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp20" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.rowIndex="2">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp21" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp22" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp23" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp24" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.columnIndex="4" GridPane.rowIndex="2">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp25" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.columnIndex="5" GridPane.rowIndex="2">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp26" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.columnIndex="6" GridPane.rowIndex="2">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp27" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.columnIndex="7" GridPane.rowIndex="2">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp28" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.columnIndex="8" GridPane.rowIndex="2">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp29" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.columnIndex="9" GridPane.rowIndex="2">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp30" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.rowIndex="3">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp31" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp32" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp33" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.columnIndex="3" GridPane.rowIndex="3">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp34" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.columnIndex="4" GridPane.rowIndex="3">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp35" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.columnIndex="5" GridPane.rowIndex="3">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp36" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.columnIndex="6" GridPane.rowIndex="3">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp37" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.columnIndex="7" GridPane.rowIndex="3">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp38" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.columnIndex="8" GridPane.rowIndex="3">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp39" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.columnIndex="9" GridPane.rowIndex="3">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp40" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.rowIndex="4">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp41" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp42" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.columnIndex="2" GridPane.rowIndex="4">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp43" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.columnIndex="3" GridPane.rowIndex="4">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp44" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.columnIndex="4" GridPane.rowIndex="4">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp45" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.columnIndex="5" GridPane.rowIndex="4">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp46" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.columnIndex="6" GridPane.rowIndex="4">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp47" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.columnIndex="7" GridPane.rowIndex="4">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp48" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.columnIndex="8" GridPane.rowIndex="4">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp49" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.columnIndex="9" GridPane.rowIndex="4">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp50" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.rowIndex="5">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp51" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp52" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.columnIndex="2" GridPane.rowIndex="5">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp53" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.columnIndex="3" GridPane.rowIndex="5">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp54" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.columnIndex="4" GridPane.rowIndex="5">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp55" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.columnIndex="5" GridPane.rowIndex="5">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp56" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.columnIndex="6" GridPane.rowIndex="5">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp57" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.columnIndex="7" GridPane.rowIndex="5">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp58" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.columnIndex="8" GridPane.rowIndex="5">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp59" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.columnIndex="9" GridPane.rowIndex="5">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp60" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.rowIndex="6">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp61" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp62" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.columnIndex="2" GridPane.rowIndex="6">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp63" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.columnIndex="3" GridPane.rowIndex="6">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp64" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.columnIndex="4" GridPane.rowIndex="6">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp65" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.columnIndex="5" GridPane.rowIndex="6">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp66" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.columnIndex="6" GridPane.rowIndex="6">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp67" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.columnIndex="7" GridPane.rowIndex="6">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp68" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.columnIndex="8" GridPane.rowIndex="6">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp69" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.columnIndex="9" GridPane.rowIndex="6">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp70" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.rowIndex="7">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp71" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.columnIndex="1" GridPane.rowIndex="7">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp72" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.columnIndex="2" GridPane.rowIndex="7">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp73" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.columnIndex="3" GridPane.rowIndex="7">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp74" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.columnIndex="4" GridPane.rowIndex="7">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp75" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.columnIndex="5" GridPane.rowIndex="7">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp76" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.columnIndex="6" GridPane.rowIndex="7">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp77" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.columnIndex="7" GridPane.rowIndex="7">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp78" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.columnIndex="8" GridPane.rowIndex="7">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp79" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.columnIndex="9" GridPane.rowIndex="7">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp80" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.rowIndex="8">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp81" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.columnIndex="1" GridPane.rowIndex="8">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp82" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.columnIndex="2" GridPane.rowIndex="8">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp83" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.columnIndex="3" GridPane.rowIndex="8">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp84" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.columnIndex="4" GridPane.rowIndex="8">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp85" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.columnIndex="5" GridPane.rowIndex="8">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp86" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.columnIndex="6" GridPane.rowIndex="8">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp87" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.columnIndex="7" GridPane.rowIndex="8">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp88" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.columnIndex="8" GridPane.rowIndex="8">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp89" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.columnIndex="9" GridPane.rowIndex="8">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp90" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.rowIndex="9">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp91" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.columnIndex="1" GridPane.rowIndex="9">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp92" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.columnIndex="2" GridPane.rowIndex="9">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp93" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.columnIndex="3" GridPane.rowIndex="9">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp94" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.columnIndex="4" GridPane.rowIndex="9">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp95" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.columnIndex="5" GridPane.rowIndex="9">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp96" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.columnIndex="6" GridPane.rowIndex="9">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp97" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.columnIndex="7" GridPane.rowIndex="9">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp98" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.columnIndex="8" GridPane.rowIndex="9">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="cmp99" mnemonicParsing="false" onAction="#clickButton" prefHeight="35.0" prefWidth="58.0" GridPane.columnIndex="9" GridPane.rowIndex="9">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>

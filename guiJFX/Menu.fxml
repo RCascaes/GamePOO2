@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="304.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="guiJFX.MenuControlador">
+   <children>
+      <ImageView fitHeight="400.0" fitWidth="304.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../imgs/imgMenu.jpg" />
+         </image>
+      </ImageView>
+      <Button disable="true" layoutX="120.0" layoutY="169.0" mnemonicParsing="false" onAction="#actionCarrer" text="Carrer" AnchorPane.leftAnchor="101.0" AnchorPane.rightAnchor="101.0">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="101.0" layoutY="213.0" mnemonicParsing="false" onAction="#actionMultiplayer" text="Multiplayer" AnchorPane.leftAnchor="101.0" AnchorPane.rightAnchor="101.0">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="101.0" layoutY="301.0" mnemonicParsing="false" onAction="#actionUninstall" text="Uninstall" AnchorPane.leftAnchor="101.0" AnchorPane.rightAnchor="101.0">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <Button disable="true" layoutX="101.0" layoutY="257.0" mnemonicParsing="false" onAction="#actionLoad" text="Load" AnchorPane.leftAnchor="101.0" AnchorPane.rightAnchor="101.0">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
